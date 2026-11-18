@@ -1,0 +1,25 @@
+name: Paper
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - name: Install LaTeX
+        run: >-
+          sudo apt-get update && sudo apt-get install -y latexmk
+          texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended
+          lmodern
+      - run: make paper
+      - uses: actions/upload-artifact@v7.0.2
+        with:
+          name: paper
+          path: ms/main.pdf
