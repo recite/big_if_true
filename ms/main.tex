@@ -7,10 +7,10 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{xurl,setspace}
 \setstretch{1.15}
-\title{Big If True: Fragility of the Manipulable-Voter Model and the Implications for Politics and Social Science\thanks{We thank Yotam Margalit for helpful comments.}}
+\title{Big if true: Fragility of the manipulable-voter model and the implications for politics and social science\thanks{We thank Yotam Margalit for helpful comments.}}
 \author{Andrew Gelman\thanks{Department of Statistics and Department of Political Science, Columbia University.} \and John Bullock \and Gaurav Sood}
-\date{Working paper, \today}
-\hypersetup{pdfauthor={Andrew Gelman, John Bullock, and Gaurav Sood},pdftitle={Big If True: Fragility of the Manipulable-Voter Model and the Implications for Politics and Social Science}}
+\date{4 Aug 2026}
+\hypersetup{pdfauthor={Andrew Gelman, John Bullock, and Gaurav Sood},pdftitle={Big if true: Fragility of the manipulable-voter model and the implications for politics and social science}}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -29,18 +29,425 @@ statistical and methodological practices that underpin studies that have been
 thought to support it.
 \end{abstract}
 
-\section{Introduction}
-To be written. Low-powered studies that clear a significance threshold
-overstate effect sizes \citep{gelman2014}.
+\section{Background}
 
-\section{Cases}
+The claim that voters are easily manipulated, and manipulated by seemingly minor
+stimuli, has a long pedigree. For example, \citet{kahneman1982} report that a
+seemingly meaningless change in wording caused 50\% of their sample to change
+its preferences over policies that had been proposed to stop the spread of a
+deadly disease.\footnote{To our knowledge, none of the many efforts to replicate
+the experiment have found an effect as large as the 50\% preference reversal
+reported by Kahneman and Tversky. But the weakest effect that we have found
+among replication efforts is a still-substantial 18\% preference reversal.}
+\citet{bishop2004} notes that support for the right of gay men and women to
+serve in the U.S.\ military rises by 10 percentage points when they are referred
+to as ``gay'' rather than ``homosexual.'' And \citet{zaller1992} devotes a book
+to explaining why small changes in question wording may cause people to change
+their answers to survey questions.
 
-\subsection{Emotional and rational leaflets in Allentown}
-\citet{westen2007} reports that in a 1930s field study in Allentown,
-Pennsylvania, Socialist votes rose by 50 percent in a ward that received an
-``emotional'' leaflet, by about a third in a ward that received a ``rational''
-leaflet, and by about a quarter in a ward that received none. The source is
-\citet{hartmann1936}.
+Findings like these have often been adduced as evidence that the voters are
+irrational or incompetent \citep[e.g.,][]{bishop2004,caplan2011}. There is an
+important sense in which such claims may be too strong. But even if we grant
+that, in some sense, these findings are evidence of irrationality, they arise
+from studies in which voters are behaving predictably, even reasonably. The
+effects in question are framing effects, and if voters are not responding to the
+content of the wording that is put to them, they are at least responding to the
+valence of that wording. For example, in the study that Bishop describes, it is
+not surprising that respondents were more supportive of gay rights when the
+critical word was ``gay'' rather than ``homosexual'': at the time of the study,
+``homosexual'' was used as a pejorative term much more often than ``gay.''
+Still, it seems hard to deny that these framing studies point to a limitation of
+ordinary voters: the views that many of them express in surveys depend on small
+differences of wording that carry little or no substantive
+meaning.\footnote{The question of the extent to which people's survey responses
+reflect their actual views is beyond the scope of this essay, and we proceed as
+most others do, by taking people's statements about their own views at face
+value. See \citet{bullock2019} for one examination of the question.}
+
+But in the last two decades, a large set of studies has expanded on the general
+claim of these framing studies in large and underappreciated ways. No longer is
+the claim only that people's views will be changed by small changes in issue
+framing or question wording. Instead, the claims are that behaviors as well as
+attitudes are subject to manipulation---and not just by the use of valenced
+wording, but through the work of stimuli that are seemingly irrelevant.
+
+Both of these claims are striking. The correspondence between attitudes and
+behaviors is famously weak \citep{greenwald1968}; in turn, it is one thing to
+claim that attitudes are changed by seemingly minor stimuli, and another
+thing---a much stronger thing---to claim that behaviors are also affected by
+minor stimuli. And it is again one thing to claim that people are affected by
+minor changes in stimuli that bear some obvious connection to the problem at
+hand---for example, the change from ``gay'' to ``homosexual''---but quite
+another to claim that people are affected by stimuli that bear no obvious
+connection at all to the task at hand.
+
+Many recent studies implicitly support one or both of these claims. For example:
+\begin{itemize}
+\item The claim of an electoral impact of shark attacks \citep{achen2002},
+  disputed by \citet{fowler2018}. The shark attack claim had to thread the
+  needle: from one direction, it is essential for the argument that voting based
+  on these events be irrational, as the larger story would fall apart if voters
+  were legitimately retaliating for government failure. From the other
+  direction, the research has to identify the vote changes specifically with
+  shark attacks and not any correlated features.
+\item The claim that single women were 20 percentage points more likely to
+  support Barack Obama when they were ovulating \citep*{durante2013}, disputed
+  by \citet{gelman2015b}.
+\item The claim that male college students with fat arms have more or less
+  conservative attitudes on redistribution, depending on their parents'
+  socioeconomic status (\citealt{petersen2013}, disputed by
+  \citealt{gelman2014}).
+\item The claim that flashing a smiley face on a computer screen for a fraction
+  of a second causes large changes in attitudes on immigration
+  (\citealt{bartels2014}, citing \citealt*{erisen2014} and disputed by
+  \citealt{gelman2015a}).
+\item The claim that chance encounters with strangers on the street would have
+  large and consistent effects on attitudes toward redistribution
+  \citep{sands2017}. This particular claim was not well supported by the
+  published data, which went in the opposite direction as hypothesized and could
+  be explainable by chance, given the large variation in responses across people
+  in this small study.
+\item The claim that exposure to a small picture of an American flag in the
+  corner of a screen while one is taking a survey increases support for
+  Republican candidates and views---up to eight months after the survey is
+  taken \citep*{carter2011}.
+\end{itemize}
+
+These studies are often seen as being of a piece with the earlier literature on
+framing effects, in the sense that these newer studies, like the earlier ones,
+show that voters are irrational or easily manipulated. But the two major
+differences between these new studies and the earlier ones are at least as
+important as the similarity---and the differences have not been sufficiently
+appreciated. For brevity, we refer to the two new claims, taken together, as the
+manipulable-voter model.
+
+This model, if true, has political implications that have not been much
+discussed. On the other hand, if the general claims of the model are false or
+unsupported by the evidence, then, reconsideration of the studies that have
+given rise to the claims is in order. Did the authors of these studies draw
+faulty conclusions because of idiosyncratic errors, or are there common
+practices---the same set of faulty practices---that underpin much of this work?
+
+In the next two sections, we take up each of these points in turn: first, the
+political implications of the model; second, the implications for social-science
+practice if the model is wrong. We then turn to an extended discussions a
+particular bodies of research involving experiments on voter turnout.
+
+\section{Political implications of the manipulable-voter model}
+
+What are the political implications of the model that attitudes and behavior
+are determined by normatively irrelevant stimuli, and a sort of neo-Freudian
+behavioral determinism, in which capricious voters are easily manipulated,
+slaves to hormones and to long-obsolete evolutionary influences, a world in
+which even the simple act of voting is labeled as ``irrational,'' and with some
+gender essentialism (which might be called ``schoolyard evolutionary biology'')
+thrown in?
+
+How to think about the model that voters are foolish and are being driven by
+some mixture of genes, hormones, and irrelevant stimuli? This is a story that
+fits the far left (democracy is a sham, no point in participating, better to
+have a revolution) and the center-right (reduce the impact of politics on our
+lives, reduce taxes and business regulations so that decisions can be made by
+people with financial resources and skin in the game). That doesn't make the
+model descriptively wrong---for that, we have to point to statistical analyses
+and failed replications---but it can help to explain some of its appeal,
+especially for those who seek validation of traditional sex roles.
+
+The model that voters are stupid (or, more charitably, ignorant, or, even more
+charitably, are rationally allocating their time to not bother becoming informed
+about their political choices) can also appeal to technocrats of the ``Nudge''
+variety (\citet{thaler2008}; see also \citep{szaszi2022}): the flip side of the
+belief that attitudes and behaviors are predictably influenced by stimuli that
+should be irrelevant, is the belief that they can be deliberately manipulated by
+outsiders, whether they be malicious advertisers and political consultants, or
+benevolent paternalists. This general attitude also applies to the scholars of
+earlier research on framing, which is why we take pains to distinguish the
+strong form of the manipulable-voter model (in which there are large and
+consistent effects from essentially irrelevant stimuli) from that earlier
+literature which made more defensible claims.
+
+Compare the above ``behaviorist'' attitude with traditional political science
+and sociology, which focus on decision making of political and social actors,
+power, coordination, roles, and so on. For example, in the area of public
+opinion and voting, consider
+\citet{ferguson1995,uhlaner1989,hirano2010,lax2009,ashworth2014}, which come
+from different perspectives and represent different schools and subfields of
+political science, but all with an overall picture of individuals and groups
+with clearly-defined aims and ideologies, jockeying for power in a somewhat
+rational way, with political and social mobilization serving to mediate the
+challenges of mass politics.
+
+We consider this mainstream approach broadly---we are not restricting ourselves
+to rational-actor models, as much of political and social science recognizes
+that people have a mix of motivations and influences. Political actors make
+mistakes, even prospectively, and voters make incoherent choices and do not
+always have a clear understanding of the positions taken by candidates they vote
+for or against.
+
+\subsection{Connection between shortcut scientific methods and shortcut models
+of political attitudes and behavior}
+
+To get people to do something, you convince them it's a good idea or you remove
+obstacles in their way. Both these tasks can be difficult, hence we understand
+the appeal of shortcuts.
+
+The push-a-button, take-a-pill model of social science is too simple in that it
+supposes that people can be consistently manipulated by small, sometimes barely
+perceptible, interventions; it is too complicated in that it attempts to
+sidestep more direct methods of changing attitudes and behavior that can require
+hard work. For example, views on redistribution can change based on personal or
+national economic conditions or the reframing of political issues such as trade
+and immigration. For some issues, focused canvassing can change opinions---but
+even after these very resource-intensive efforts, the effects after a few days
+are typically less than one-tenth of one standard deviation
+\citep{kalla2020}. Compared to these direct exposures or interventions, it would
+be surprising if an innocuous chance encounter with a stranger were to have a
+large and consistent effect. Again, if such effects were real, if we truly ``had
+no choice but to accept that these conclusions are true''\footnote{This phrase
+came from a bestselling book by \citet{kahneman2011}, who later changed his
+mind, as he explained in this blog comment in 2017:
+\url{https://replicationindex.com/2017/02/02/reconstruction-of-a-train-wreck-how-priming-research-went-of-the-rails/comment-page-1/\#comment-1454}}
+then we would have to reassess our understanding of political attitudes and
+behavior.
+
+We also see a resemblance between the push-a-button model of behavior and a
+shallow, automatic form of social science in which the ``buttons'' being pushed
+are randomized experiments, identification strategies in observational studies,
+and statistical significance. A lack of concern about details (as in the studies
+on ovulation and behavior that got the dates of ovulation wrong; see discussion
+in \citealt{gelman2015b}) is connected with the sort of theoretical vagueness
+that allows nearly unlimited forking paths in data coding, analysis, and
+interpretation of results.
+
+\section{Implications for social science if the model is wrong}
+
+Before getting to the implications of the research positions listed above, we
+will briefly go over some of the methodological problems that led us to discount
+the claimed evidence.
+
+\paragraph{Feedback loop of credulity.} Belief in large effects, naively
+optimistic power analyses, the building-up of a literature based on apparent
+``conceptual replications''---this is how bad ideas can stay in circulation. The
+point here is not that all published work is wrong, or even that all the work
+above is wrong---a claim can have weak evidential support but still be
+true---but rather that the normal process of scientific review is not
+self-correcting, or at least not in the short term.
+
+\paragraph{Researcher degrees of freedom and forking paths.} In any given study,
+there are typically many different choices involved in the coding,
+inclusion/exclusion, and analysis of data, hence many ways to obtain statistical
+significance even in the absence of any underlying effect. \citet*{simmons2011}
+famously labeled this problem as ``p-hacking'' but we prefer the term ``forking
+paths'' to emphasize that the process of adapting an analysis to reach
+statistical significance can happen without the conscious choice of the
+researcher, and even if only one analysis is performed on the data at hand
+\citep{gelman2014}.
+
+\paragraph{The statistical significance filter.} When only statistically
+significant results are reported or emphasized, the resulting product
+systematically leads to overestimation of effect sizes and exaggeration of the
+importance of claimed effects \citep*[e.g.,][]{gerber2008}.
+
+\paragraph{Measurement issues.} The measurements used in experimental studies are
+often distant from real-life exposures of interest. Some examples above include
+questionable claims about dates of ovulation and upper body strength and the
+questionable relevance of studying a fleeting image on a computer screen. If the
+effects in question were real and replicable, then the measurement problems
+would not be such a concern---for example, if subliminal smiley faces really did
+have their advertised effects, then this would tell us something about the
+susceptibility of political opinions to irrelevant stimuli. But given existing
+statistical concerns, these measurement problems give us one more reason to be
+skeptical.
+
+\paragraph{Faith in statistics.} There seems to be a widespread attitude that
+causal identification (through experiment or an analysis method in an
+observational study) plus statistical significance implies near certainty. This
+belief is mistaken, partly because experiments and identification strategies
+are imperfect in the real world, and partly because of the forking-path problem
+listed above.
+
+\paragraph{Social and economic incentives.} Direct incentives for researchers to
+publish, journals to promote dramatic claims and to minimize concerns about the
+quality of published work, universities to publicize and exaggerate, and
+journalists to report on breakthroughs. Also selection: more scrupulous
+researchers are less likely to make big claims; more modest claims are less
+likely to be published in top journals; more restrained public relations
+officers are less likely to garner attention for research they are promoted; and
+more skeptical journalists are less likely to bother with shaky claims. There is
+also the never-admit-error, no-retraction-no-correction culture.
+
+\subsection{Incoherence of the published literature as a whole}
+
+Many published claims of large and consistent efffects of small interventions
+interfere with each other---or they would interfere, if these effects all truly
+existed. The science of subliminal effects eats itself. If subliminal or even
+unintentional messages can cause large changes in behavior, then many
+experimental findings could be explained as byproducts of embodied cognition or
+social priming. For example, perhaps the instructions given to participants in
+the Obama-voting study happened to stimulate positive feelings in ovulating
+women. Similarly, perhaps the results on the subliminal image study had nothing
+to do with smiley faces but instead involved the triggering of some implicit
+bias. Or maybe the apparent effects of shark attacks were actually driven by the
+results of local sporting events.
+
+Typically, when one of these effects is studied, it is without considering all
+the others, which suggests that researchers when studying effect A, don't really
+believe in B, C, D, etc.---or else they trust that these other effects will
+cancel out as a result of the randomization or natural experiment underlying
+their causal identification. But, conditional on factors B, C, D, etc., having
+large effects, it is incorrect to assume they can be ignored, even in a
+randomized study of factor A. The problem is interactions: if the effect of A
+has large interactions with B, C, etc., then any observed effect is unstable
+unless the analysis controls or adjusts for all these other factors
+\citep{tosh2025}. And this is not merely a theoretical concern, given that such
+large interactions have been posited based on marital status, parental
+socioeconomic status, and outdoor air temperature, as well as the topic of study
+and the location of the experiment. Our guess is that, when interpreting any
+particular result, researchers do not think so hard about interactions outside
+of their design, instead putting too much trust in causal identification and
+statistical significance, without recognizing the assumptions underneath.
+
+\subsection{Relation to theories of social and political attitudes and behavior}
+
+In the social sciences, the push-a-button, take-a-pill model manifests itself in
+a belief that people can be given large and consistent changes based on small
+interventions which should be irrelevant, for example, that evacuation behavior
+is affected by whether a hurricane has a boy or girl name. This, in turn,
+suggests a model of attitudes and behavior based on indirection, in a way
+somewhat reminiscent of Freudian analysis. Also in common with the Freudian
+approach is that the expert---the psychoanalyst, or the professor of
+psychology---understands people way that may seem contrary to intuition but is
+consistent with certain deeper views of human nature. In some ways, theories of
+priming have the worst of both worlds, with the logical looseness that keeps
+these theories unfalsifiable, but without the psychological insight of Freud.
+For all the weaknesses of psychoanalytic theory, at least it supposes that the
+hidden desires which drive our actions are deep and important, unlike social
+priming theory, which supposes large effects from trivial interventions.
+
+Our problem comes in many of the details and can be summarized by a disquiet
+with the claimed magnitudes of effects. It is plausible that some voters change
+their political views according to time of the month, but not so plausible that
+10\% or 20\% of women switch in that way. These questions are empirical as well
+as theoretical, and we do not claim that our skepticism is a strong argument
+against claims of large effects; rather, given the empirical weaknesses of such
+claims, it is helpful to remember that they have no compelling theoretical
+justification.
+
+Ironically, the ``behavioral'' approach to economics and social science echoes
+the nearly century-old theory of behaviorism in psychology, a model which was
+overthrown in the ``cognitive revolution'' of the 1950s. Considering people as
+black boxes can seem like pure, objective science---just ask B.F. Skinner---but
+a huge amount is lost by not directly observing and modeling internal processes.
+Which can be done in many ways, including asking participants in experiments
+what they are thinking and involving them more actively in research questions
+(rather than, as is often done, attempting to use deception to decouple
+participants' cognitive processes from their decision making).
+
+We can contrast the claims about priming to claims about framing of issues in
+political debates. As \citet{druckman2004} discusses, framing effects are
+considered to be evidence of irrationality in decision making. But issue framing
+is, if not formally ``rational'' in the sense of classical utility theory, still
+reasonable, especially when considering attitudes and behaviors in a political
+context, in which political actors on different sides have incentives to
+influence people.\footnote{We distinguish here between issue framing and
+``equivalence framing.'' Framing of the latter type occurs when people's
+preferences depend on the use of different but logically equivalent phrases.
+See \citet[pp.~114,]{chong2007}.} By contrast, much of the priming literature
+involves stimuli (``primes'') that have little direct relevance to the targeted
+attitudes and behaviors.
+
+To elaborate on these problems, we consider some of the literature on voter
+turnout experiments.
+
+\section{Voter turnout}
+
+It is now widely accepted that, under a wide range of conditions, interventions
+designed to increase voter turnout have effects that usually range from zero to
+four percentage points \citep*{gerber2020}. Interventions that raise turnout by
+more than four percentage points are highly unusual. They tend to depend on
+striking messages---for example, the ``social pressure'' messages used in
+\citet*{gerber2008}---or on interventions that are otherwise highly unusual and
+resource-intensive. Even in these cases, no techniques have been found that
+consistently raise voter turnout by more than four percentage points. Increasing
+voter turnout is a difficult business.
+
+Thanks to the rise of large-scale field experiments on voter turnout, most
+social scientists now agree with this assessment. But not everyone agrees.
+
+Some maintain, instead, that small changes in stimuli---even irrelevant
+stimuli---can have massive effects on turnout. Two studies in this vein are
+especially noteworthy: those of \citet{greenwald1987,bryan2011}. Consider first
+the \citet{greenwald1987} study. The authors find that simply asking people to
+predict whether they will vote in an upcoming election increases turnout by more
+than 20 percentage points.
+
+Now consider \citet{bryan2011}. The authors argue that subtle linguistic cues
+can affect voter turnout. In three experiments, they give subjects surveys that
+refer to voting with a self-relevant noun (``How important is it to you to be a
+voter in the upcoming election?'') or with a verb (``How important is it to you
+to vote in the upcoming election?'') They find that the noun treatment increases
+turnout by 11\% in California during the 2008 presidential election (Study 2,
+$N = 88$) and by 14\% in New Jersey during the 2009 gubernatorial election
+(Study 3, $N = 214$). Unlike many studies in this vein, the authors rely on
+official turnout records to support claims about the effectiveness of the noun
+treatment. The authors' explanation for the finding is that the noun treatment
+[activates? enhances?] subjects' tendency to think that being ``a voter'' is a
+meaningful part of their identity, which in turn makes them more likely to vote.
+
+These findings were sharply at odds with the turnout literature discussed above.
+Indeed, they imply that the noun treatment may be the most powerful turnout
+intervention ever devised. Apparently skeptical of this result,
+\citet{gerber2016} used the noun treatment in a large field experiment and found
+that it had approximately no effect. Some of the authors of the original article
+wrote a response that the Gerber et al.\ replication attempt was
+``inauthentic'' because the elections that Gerber et al.\ had studied were not
+competitive. In uncompetitive elections, the authors reasoned, voter identity
+isn't important. In turn, the noun treatment should not be expected to increase
+turnout in such elections.
+
+In response, \citet*{gerber2018} conducted a new field experiment in which the
+noun treatment was used in more competitive races. They again found
+approximately no effect. \citet*{bryan2019} responded that Gerber, Huber, and
+Fang had mis-analyzed and misrepresented their own experiment. Specifically,
+their ``more competitive'' races were still not all competitive, and their
+finding of approximately no effect was due to the use of an unusual set of
+control variables. Use almost any other set of control variables, Bryan et al.\
+claimed, and one will estimate large effects of the noun treatment.
+
+Gerber, Huber, and Fang did not respond directly to all of the charges leveled
+against their work by \citet*{bryan2019}. Instead, they fielded yet another
+field experiment---this one preregistered and fielded in still-more-competitive
+races, thereby speaking to some of the questions. They again found no effect
+\citep*{gerber2020}.
+
+\section{Discussion}
+
+A lot of social scientists seem to turn off their critical thinking when a
+randomized experiment is involved. They forget about questions of validity (are
+you measuring something of interest) and reliability (are your measurements
+stable enough to allow you to learn anything generalizable from your sample).
+These are general concerns; in social science these mistakes in research methods
+have let in a tide of claims purporting to support a view of voters being
+blindly led by their genes and hormones and being predictably influenced by
+irrelevant stimuli, which in turn lends apparent scientific support to cynical
+views of politics. Some political cynicism is warranted, but we would argue it
+applies through pathways more generally accepted to be part of political
+science, involving ideology, partisanship, interest groups, and distributive
+politics.
+
+The replication crisis in social science goes far beyond the problems with
+behaviorist models discussed above. For example, \citet{vivalt2020} finds that
+published estimates of the effect of policy interventions are wildly optimistic,
+a finding which should be no surprise given what we know about selection on
+statistical significance \citep[see e.g.,][]{button2013} but which has
+potentially large implications, both for policy and for future practice of
+policy evaluation. We would care about this even in the absence of any link to
+particular theories of attitudes and behavior. But as social scientists we are
+especially concerned about the implications of certain behaviorist theories that
+have been so strongly pushed by much of the science establishment and the news
+media, while not being well supported by data. Recognition of the replication
+crisis should change not only our views of particular studies but also our
+larger perspective on citizens' views and political deliberation.
 
 \bibliographystyle{plainnat}
 \bibliography{references}
